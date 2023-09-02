@@ -8,6 +8,8 @@ in openvpnConnect.sh set cd and --vpnpath pathes
 after that change mode on openvpnConnect.sh and run it
 ```bash
     chmod u+x /path/to/openvpnConnect.sh
+```
+```bash
     ./path/to/openvpnConnect.sh
 ```
 
