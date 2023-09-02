@@ -12,33 +12,37 @@ from PIL import Image, ImageOps
 from torchvision import transforms
 
 
-def default_connection(login: str, password: str, vpnpath: str):
+def default_connection(login: str, password: str, vpnpath: str, background_mode):
     with open('./utils/auth.cfg', mode='w') as file:
         file.write(login + '\n')
         file.write(password + '\n')
-
+    background_key = '' if background_mode else '-b'
     os.system(
-        f'sudo openvpn --config {vpnpath} --auth-user-pass ./utils/auth.cfg'
+        f'sudo {background_key} openvpn --config {vpnpath} --auth-user-pass ./utils/auth.cfg'
     )
 
 if __name__ == '__main__':
 
     MODEL_BINARY_PATH = './utils/cnn.pth'
     REGION = ''
+    BACKGROUND_MODE = True
 
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--vpnpath', type=str, help='absolute path to .ovpn file')
     parser.add_argument('--login', type=str, default='freeopenvpn', help='vpn login')
     parser.add_argument('--password', type=str, default=None, help='vpn password. If None, it will be obtained from the website')
+    parser.add_argument('--background', type=str, default='n', help='If the flag is set to any char except n, then the program will be run as a daemon')
 
     args = parser.parse_args()
 
     if args.vpnpath is None:
         raise Exception(f'Please write the path to .ovpn file')
+
+    BACKGROUND_MODE = True if args.background == 'n' else False
     
     if args.password is not None:
-        default_connection(args.login, args.password, args.vpnpath)
+        default_connection(args.login, args.password, args.vpnpath, BACKGROUND_MODE)
         exit(0)
     
     REGION = args.vpnpath.split('/')[-1].split('_')[0]
@@ -73,4 +77,4 @@ if __name__ == '__main__':
     for img in numbers:
         result += str(torch.argmax(model(transform(img)[None,:,:,:])).item())
 
-    default_connection(args.login, result, args.vpnpath)
+    default_connection(args.login, result, args.vpnpath, BACKGROUND_MODE)
