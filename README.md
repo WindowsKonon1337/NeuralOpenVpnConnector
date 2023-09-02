@@ -5,9 +5,10 @@ This application will allow you to connect to freeopenvpn without guessing the p
 
 # How to use
 in openvpnConnect.sh set cd and --vpnpath pathes
-after that change mode on openvpnConnect.sh
+after that change mode on openvpnConnect.sh and run it
 ```bash
     chmod u+x /path/to/openvpnConnect.sh
+    ./path/to/openvpnConnect.sh
 ```
 
 # Where is learning dataset?
