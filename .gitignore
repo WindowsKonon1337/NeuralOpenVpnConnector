@@ -2,6 +2,7 @@ __*
 be*
 nums
 path*
+*.cfg
 unmark*
 mnist*
 *Not*
@@ -10,4 +11,4 @@ pretr*
 rever*
 nn*
 *.png
-
+!__main__.py
