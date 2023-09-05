@@ -12,3 +12,6 @@ rever*
 nn*
 *.png
 !__main__.py
+*.sh
+*.html
+*.ovpn
