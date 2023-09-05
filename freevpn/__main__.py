@@ -2,15 +2,12 @@ import argparse
 import io
 import os
 import re
-import sys
 
-sys.path.insert(1, './neural')
-
+import network
 import torch
 from neural.CNN import ConvNet
 from PIL import Image, ImageOps
 from torchvision import transforms
-import network
 
 
 def default_connection(login: str, password: str, vpnpath: str, background_mode):
