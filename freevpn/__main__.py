@@ -25,8 +25,6 @@ def default_connection(login: str, password: str, vpnpath: str, background_mode)
 if __name__ == '__main__':
 
     MODEL_BINARY_PATH = './neural/cnn.pth'
-    region = ''
-    background_mode = True
 
     parser = argparse.ArgumentParser()
 
