@@ -55,7 +55,7 @@ def get_region_page(region: str) -> str:
     response = requests.get(url)
     return response.text
 
-def get_ovpn_tcp_config(region: str): 
+def get_ovpn_tcp_config(region: str):
     url = OVPN_FILE_URL_TEMPLATE.format(region=region)
     response = requests.get(url)
     open(f'{region}_freeopenvpn_tcp.ovpn', mode='wb').write(response.content) # не смог в tmpб для baseline пусть пока так
