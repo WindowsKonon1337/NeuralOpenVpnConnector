@@ -54,7 +54,7 @@ if __name__ == '__main__':
         default_connection(args.login, args.password,vpnpath, background_mode)
         exit(0)
 
-    region_page = network.get_region_page(region='Netherlands')
+    region_page = network.get_region_page(region=region)
     image_path = re.search(r'src="(img/password\.php\?\w+)"', region_page).group(1)
     image_bytes = network.get_password_image_bytes(image_path, region)
 
