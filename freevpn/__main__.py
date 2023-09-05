@@ -13,7 +13,7 @@ from torchvision import transforms
 def default_connection(login: str, password: str, vpnpath: str, background_mode):
     with open('./auth.cfg', mode='w') as file:
         file.write(login + '\n')
-        file.write(password + '\n')
+        file.write(password)
     background_key = '' if background_mode else '-b'
     os.system(
         f'sudo {background_key} openvpn --config {vpnpath} --auth-user-pass ./auth.cfg'
