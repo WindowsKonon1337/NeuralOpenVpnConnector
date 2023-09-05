@@ -21,7 +21,7 @@ def default_connection(login: str, password: str, vpnpath: str, background_mode)
 
 if __name__ == '__main__':
 
-    MODEL_BINARY_PATH = './neural/cnn.pth'
+    MODEL_WEIGHTS_PATH = './neural/cnn.pth'
 
     parser = argparse.ArgumentParser()
 
@@ -70,7 +70,7 @@ if __name__ == '__main__':
         )
 
     model = ConvNet()
-    model.load_state_dict(torch.load('./neural/cnn.pth'))
+    model.load_state_dict(torch.load(MODEL_WEIGHTS_PATH))
     result = ""
     for img in numbers:
         result += str(torch.argmax(model(transform(img)[None,:,:,:])).item())
