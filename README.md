@@ -3,8 +3,15 @@
 # For what
 This application will allow you to connect to freeopenvpn without guessing the password right from the terminal.
 
-# How to use
-А вот тут надо обновить )
+# Install
+```bash
+./install.sh
+```
+
+# Connect
+```bash
+sudo ./connect.sh [args...]
+```
 
 # Where is learning dataset?
 [here](https://cloud.mail.ru/public/mvUE/o1RK1jdYN), but this dataset is incomplete now (
