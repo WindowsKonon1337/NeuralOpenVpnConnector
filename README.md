@@ -1,5 +1,7 @@
 # NeuralOpenVpnConnector
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # For what
 This application will allow you to connect to freeopenvpn without guessing the password right from the terminal.
 
