@@ -1,4 +1,4 @@
-__*
+**/__pycache__
 be*
 nums
 path*
@@ -12,3 +12,6 @@ rever*
 nn*
 *.png
 !__main__.py
+*.html
+*.ovpn
+.venv

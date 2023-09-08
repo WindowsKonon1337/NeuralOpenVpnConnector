@@ -1,4 +1,3 @@
 torch
 torchvision
-beautifulsoup4
 Pillow

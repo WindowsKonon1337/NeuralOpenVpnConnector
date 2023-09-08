@@ -3,14 +3,14 @@
 # For what
 This application will allow you to connect to freeopenvpn without guessing the password right from the terminal.
 
-# How to use
-in openvpnConnect.sh set cd and --vpnpath pathes
-after that change mode on openvpnConnect.sh and run it
+# Install
 ```bash
-    chmod u+x /path/to/openvpnConnect.sh
+./install.sh
 ```
+
+# Connect
 ```bash
-    ./path/to/openvpnConnect.sh
+sudo ./connect.sh [args...]
 ```
 
 # Where is learning dataset?
